@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.card{
+    width:350px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:35px;
+    color:white;
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+
+.card h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.input-box{
+    margin-bottom:15px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00d4ff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+#result{
+    margin-top:15px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🔒 Secure Login</h1>
+
+    <div class="input-box">
+        <input type="text" id="user" placeholder="Username">
+    </div>
+
+    <div class="input-box">
+        <input type="password" id="pass" placeholder="Password">
+    </div>
+
+    <button onclick="checkLogin()">LOGIN</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function checkLogin(){
+    const user = document.getElementById("user").value;
+    const pass = document.getElementById("pass").value;
+
+    if(user === "titaa" && pass === "2026"){
+        document.getElementById("result").innerHTML =
+        "✅ Selamat datang, " + user;
+    } else {
+        document.getElementById("result").innerHTML =
+        "❌ Login gagal";
+    }
+}
+</script>
+
+</body>
+</html>
